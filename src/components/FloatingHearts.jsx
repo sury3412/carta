@@ -34,7 +34,7 @@ const FloatingHearts = () => {
                         x: [0, Math.random() * 50 - 25, 0]
                     }}
                     transition={{ duration: heart.duration, ease: "linear" }}
-                    className="absolute text-pink-400 opacity-40"
+                    className="absolute text-red-600 opacity-60"
                     style={{ left: `${heart.left}%` }}
                 >
                     <Heart size={heart.size} fill="currentColor" />

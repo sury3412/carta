@@ -10,11 +10,13 @@
 
 body {
   font-family: var(--font-sans);
-  background-image: radial-gradient(#ffe4e6 1px, transparent 1px);
+  background-color: #0a0a0a;
+  background-image: radial-gradient(#dc2626 1px, transparent 1px);
   background-size: 30px 30px;
+  color: #ffffff;
 }
 
 .bg-paper-pattern {
-  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-image: radial-gradient(#b91c1c 1px, transparent 1px);
   background-size: 20px 20px;
 }

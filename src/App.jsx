@@ -9,7 +9,7 @@ function App() {
   const [stage, setStage] = useState('envelope'); // 'envelope' | 'main'
 
   return (
-    <div className="min-h-screen bg-pink-50 text-gray-800 font-sans selection:bg-rose-200 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans selection:bg-red-900 selection:text-white overflow-x-hidden">
       <FloatingHearts />
       <MusicPlayer />
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { PenTool } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const Heartdoodle = () => (
     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="text-rose-500">
@@ -9,17 +9,18 @@ const Heartdoodle = () => (
 );
 
 const Letter = () => {
-    const text = `Mi amor,
+    const text = `Amor de mi vida,
 
-Desde que llegaste a mi vida, todo tiene más color. Eres mi razón favorita para sonreír cada mañana y mi último pensamiento antes de dormir.
+Hoy y siempre quiero recordarte lo mucho que TE AMO y lo importante que eres en mi vida. Eres mi persona favorita hoy y siempre. ¿Lo recuerdas? mínimo un par de vidas juntas.
 
-Gracias por cada risa compartida, por cada abrazo que reinicia mi mundo y por ser mi equipo en esta aventura llamada vida. No importa lo que pase, sé que junto a ti todo es posible.
+Gracias por cada momento a tu lado, por cada abrazo, por cada sonrisa, por cada una de tus palabras llenas de amor, y por ser mi compañero en esta aventura llamada vida, en la que tú y yo somos los protagonistas.
 
-Hoy quiero recordarte lo increíble que eres y cuánto te quiero.
-Gracias por elegirme todos los días.
+Te amo con todo mi ser y le pido a Dios que nos permita caminar tomados de la mano toda una eternidad.
 
-Siempre tuyo/a,
-Tu persona especial ❤️`;
+Gracias por elegirme todos los días…
+
+Atentamente
+El amor de tu vida ♡`;
 
     const [displayedText, setDisplayedText] = useState('');
 
@@ -36,26 +37,38 @@ Tu persona especial ❤️`;
     return (
         <section className="max-w-2xl mx-auto mb-24 p-8 bg-paper-pattern relative transform rotate-1 shadow-xl bg-[#fffdf0]">
             {/* Decorative tape */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-8 bg-rose-200/50 transform -rotate-2" />
+            <motion.div
+                initial={{ rotate: -2 }}
+                whileInView={{ rotate: 0 }}
+                className="bg-stone-50 p-8 md:p-12 rounded-sm shadow-2xl relative mb-24 overflow-hidden border-t-8 border-red-800"
+            >
+                {/* Paper texture/lines */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px]" />
 
-            <div className="flex items-center justify-center gap-2 text-rose-400 mb-6">
-                <PenTool size={20} />
-                <span className="uppercase tracking-widest text-xs font-bold">Carta para ti</span>
-            </div>
+                <div className="relative z-10 font-serif text-stone-800 leading-loose text-lg md:text-xl text-center md:text-left">
+                    <motion.div className="mb-8">
+                        <span className="text-red-700 font-bold text-2xl">Mi amor,</span>
+                    </motion.div>
 
-            <div className="font-serif text-xl md:text-2xl text-gray-700 leading-relaxed whitespace-pre-line">
-                {displayedText}
-                <motion.span
-                    animate={{ opacity: [0, 1, 0] }}
-                    transition={{ repeat: Infinity, duration: 0.8 }}
-                    className="inline-block w-0.5 h-6 bg-rose-500 ml-1 translate-y-1"
-                />
-            </div>
+                    <div className="space-y-6">
+                        {/* Typewriter content */}
+                        {displayedText}
+                        <span className="inline-block w-1 h-6 bg-red-600 animate-pulse ml-1" />
+                    </div>
 
-            {/* Signature area decoration */}
-            <div className="absolute bottom-4 right-8 opacity-10">
-                <Heartdoodle />
-            </div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 1 }}
+                        className="mt-12 text-right"
+                    >
+                        <p className="text-red-800 italic font-bold text-2xl">Por siempre tuyo,</p>
+                        <div className="mt-2 flex justify-end">
+                            <Heart size={24} fill="#dc2626" className="text-red-600 ml-4 animate-bounce" />
+                        </div>
+                    </motion.div>
+                </div>
+            </motion.div>
         </section>
     );
 };
