@@ -62,7 +62,7 @@ El amor de tu vida ♡`;
                         transition={{ delay: 1 }}
                         className="mt-12 text-right"
                     >
-                        <p className="text-red-800 italic font-bold text-2xl">Por siempre tuyo,</p>
+                        <p className="text-red-800 italic font-bold text-2xl">Por siempre tuya,</p>
                         <div className="mt-2 flex justify-end">
                             <Heart size={24} fill="#dc2626" className="text-red-600 ml-4 animate-bounce" />
                         </div>
